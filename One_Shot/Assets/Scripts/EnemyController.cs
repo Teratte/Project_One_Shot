@@ -34,6 +34,69 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Player 게임 오브젝트 가져오기
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if(player != null)
+        {
+            if(isActive)
+            {
+                // 플레이어와의 각도 구하기
+                float dx = player.transform.position.x - transform.position.x;
+                float dy = player.transform.position.y - transform.position.y;
+                float rad = Mathf.Atan2(dy, dx);
+                float angle = rad * Mathf.Rad2Deg;
+                //// 이동 각도에 따른 애니메이션 설정
+                //if(angle > -45.0f && angle <= 45.0f)
+                //{
+                //    nowAnimation = idleAnime;
+                //}
+                //else if(angle > 45.0f && angle <= 135.0f)
+                //{
+                //    nowAnimation = idleAnime;
+                //}
+                //else if(angle >= -135.0f && angle <= -45.0f)
+                //{
+                //    nowAnimation = idleAnime;
+                //}
+                //else
+                //{
+                //    nowAnimation = idleAnime;
+                //}
+
+                //이동할 벡터 만들기
+                axisH = Mathf.Cos(rad) * speed;
+                axisV = Mathf.Sin(rad) * speed;
+            }
+            else
+            {
+                // 플레이어와의 거리 확인
+                float dist = Vector2.Distance(transform.position, player.transform.position);
+                if(dist < reactionDistance)
+                {
+                    isActive = true;    // 활성으로 설정
+                }
+            }
+        }
+        else if(isActive)
+        {
+            isActive = false;
+            rbody.velocity = Vector2.zero;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+       if(isActive && hp > 0)
+       {
+            // 이동
+            rbody.velocity = new Vector2(axisH, axisV);
+            if(nowAnimation != oldAnimation)
+            {
+                // 애니메이션 변경하기
+                oldAnimation = nowAnimation;
+                Animator animator = GetComponent<Animator>();
+                animator.Play(nowAnimation);
+            }
+       }
     }
 }
