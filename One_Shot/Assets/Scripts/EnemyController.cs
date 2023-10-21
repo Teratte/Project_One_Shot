@@ -27,7 +27,8 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Rigidbody2D 가져오기
+        rbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
