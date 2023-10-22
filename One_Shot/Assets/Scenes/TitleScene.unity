@@ -415,7 +415,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: One Shot!
+  m_text: (Sample Title)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1142,7 +1142,7 @@ GameObject:
   - component: {fileID: 2094911081}
   - component: {fileID: 2094911080}
   m_Layer: 0
-  m_Name: SceneManager
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1181,5 +1181,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 1320706630}
-  - {fileID: 2094911081}
   - {fileID: 143974593}
+  - {fileID: 2094911081}
