@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
-    public GameObject MonsterPrefab;    // 생성할 몬스터의 원본 프리팹
+    public GameObject[] MonsterPrefabs;    // 생성할 몬스터의 원본 프리팹
     public float spawnRateMin = 0.5f;   // 최소 생성 주기
     public float spawnRateMax = 3f;     // 최대 생성 주기
 
@@ -37,7 +37,9 @@ public class MonsterSpawner : MonoBehaviour
 
             // bulletPrefab의 복제본을 
             // transform.position 위치와 transform.rotation 회전으로 생성
-            GameObject monster = Instantiate(MonsterPrefab, transform.position, transform.rotation);
+            // 몬스터프리팹 배열에 있는 오브젝트 중 임의의 오브젝트 생성
+            int index = Random.Range(0, MonsterPrefabs.Length);
+            GameObject monster = Instantiate(MonsterPrefabs[index], transform.position, transform.rotation);
             // 생성된 Monster 게임 오브젝트의 정면 방향이 target을 향하도록 회전
             //monster.transform.LookAt(target);
 
