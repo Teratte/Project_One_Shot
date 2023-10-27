@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Monster : MonoBehaviour
 {
-    public float speed = 5.0f;
+    public float speed = 5.0f;  // 몬스터 움직임 속도
     private Rigidbody2D rbody;
 
     // Start is called before the first frame update
