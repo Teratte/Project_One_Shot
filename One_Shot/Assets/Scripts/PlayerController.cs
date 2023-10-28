@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    private int current_hp = 5;     // 플레이어 hp 
+
+    private int max_hp = 5; // 최대 hp
     float angle;
     Vector2 target, mouse;
     Rigidbody2D rbody;
