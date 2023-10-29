@@ -106,5 +106,9 @@ public class EggController : MonoBehaviour
                 animator.Play(DamageAnime);
             }
         }
+        if(collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 }
