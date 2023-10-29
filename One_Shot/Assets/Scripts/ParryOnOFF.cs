@@ -9,7 +9,6 @@ public class ParryOnOFF : MonoBehaviour
 
     public GameObject parryPrefab;
     private float parryTimer = 0.0f;
-    bool ParryStatus = false;
 
     // Start is called before the first frame update
     void Start()
