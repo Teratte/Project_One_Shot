@@ -5,8 +5,8 @@ using UnityEngine;
 public class MonsterSpawner : MonoBehaviour
 {
     public GameObject[] MonsterPrefabs;    // 생성할 몬스터의 원본 프리팹
-    public float spawnRateMin = 0.5f;   // 최소 생성 주기
-    public float spawnRateMax = 3f;     // 최대 생성 주기
+    public float spawnRateMin = 2.5f;   // 최소 생성 주기
+    public float spawnRateMax = 7.0f;     // 최대 생성 주기
 
     private Transform target; // 발사할 대상
     private float spawnRate;  // 생성 주기
