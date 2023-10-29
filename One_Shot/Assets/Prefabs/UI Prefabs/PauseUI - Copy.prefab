@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 6873613978299375542}
   - component: {fileID: 3064830265022614662}
   m_Layer: 5
-  m_Name: PauseUI
+  m_Name: PauseUI - Copy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
