@@ -1,7 +1,13 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+<<<<<<< Updated upstream
+=======
+using Unity.VisualScripting;
+using UnityEditor.Build.Content;
+>>>>>>> Stashed changes
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,10 +18,19 @@ public class PlayerController : MonoBehaviour
     bool isMoving = false;        // 이동 중인지 여부
     
     Rigidbody2D rbody;
+<<<<<<< Updated upstream
     // Start is called before the first frame update
     void Start()
     {
         // Rigidbody2D 가져오기
+=======
+
+    public int Current_HP => current_hp;
+
+    private void Start()
+    {
+        current_hp = max_hp;
+>>>>>>> Stashed changes
         rbody = GetComponent<Rigidbody2D>();
     }
 
@@ -35,7 +50,16 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+<<<<<<< Updated upstream
             isMoving = true;
+=======
+            current_hp -= 1;
+            Debug.Log("체력 1감소 ");
+            if(current_hp == 0)
+            {
+                SceneManager.LoadScene(2);
+            }
+>>>>>>> Stashed changes
         }
     }
 }
