@@ -27,6 +27,7 @@ public class GameplayManager : MonoBehaviour
     {
         if(isGame == true)
         {
+            Time.timeScale = 1;
             currentTime += 1 * Time.deltaTime;
             TimeMemory.time = currentTime;
         }
