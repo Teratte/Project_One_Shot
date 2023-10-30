@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField]
-    private GameplayManager gameplayManager;
+    private PlayerController playerController;
     [SerializeField]
     private Image[] hpUI;
     [SerializeField]
@@ -19,7 +19,7 @@ public class HealthBar : MonoBehaviour
     {
         for (int i = 0; i < hpUI.Length; i++)
         {
-            if (i < gameplayManager.CurrentHP)
+            if (i < playerController.Current_HP)
             {
                 hpUI[i].sprite = heartOn;
             }
