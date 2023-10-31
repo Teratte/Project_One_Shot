@@ -1083,6 +1083,10 @@ PrefabInstance:
       propertyPath: gameplayManager
       value: 
       objectReference: {fileID: 2083797908}
+    - target: {fileID: 7889400483495231420, guid: f6e78e24601963d4293e7476699d0d34, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 2083797911}
     - target: {fileID: 8681231399607006573, guid: f6e78e24601963d4293e7476699d0d34, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1400,11 +1404,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c0d9a2e599c6e941866cb8d4c7ef2b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  max: 3
-  secondPer: 1
   ingameUI: {fileID: 2030033891}
-  gameoverUI: {fileID: 198897786}
   pauseUI: {fileID: 135433867}
+  gameoverUI: {fileID: 198897786}
+--- !u!114 &2083797911 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1690878684783852659, guid: 633b733f81f03c245b5d206d9d0f241b, type: 3}
+  m_PrefabInstance: {fileID: 1865328431}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000192691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7067ffeb1a13854d9a2deb668637550, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2097877836
 PrefabInstance:
   m_ObjectHideFlags: 0

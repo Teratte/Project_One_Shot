@@ -1,18 +1,22 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Build.Content;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    int max_hp = 3; // 최대 hp
+    int max_hp = 3; 
 
     private int current_hp = 1;
     private float angle;
     Vector2 target, mouse;
     Rigidbody2D rbody;
+    public int Current_HP => current_hp;
 
     private void Start()
     {
@@ -38,13 +42,11 @@ public class PlayerController : MonoBehaviour
             else if (current_hp < max_hp)
             {
                 current_hp += 1;
-                Debug.Log("체력 1회복 ");
             }
         }
         if (collision.gameObject.tag == "Enemy")
         {
             current_hp -= 1;
-            Debug.Log("체력 1감소 ");
         }
     }
 }
