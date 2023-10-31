@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         current_hp = max_hp;
-        Debug.Log(current_hp);
         rbody = GetComponent<Rigidbody2D>();
         target = transform.position;
     }
@@ -47,6 +46,10 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             current_hp -= 1;
+            if(current_hp == 0)
+            {
+                SceneManager.LoadScene(2);
+            }
         }
     }
 }
