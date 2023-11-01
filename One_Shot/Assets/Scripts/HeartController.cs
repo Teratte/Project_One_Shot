@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class HearController : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip heal;
+
+    private AudioSource healSfx;
     // HP
     public int hp = 1;
     // 이동 속도
@@ -25,6 +29,7 @@ public class HearController : MonoBehaviour
     {
         // Rigidbody2D 가져오기
         rbody = GetComponent<Rigidbody2D>();
+        healSfx = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -101,7 +106,14 @@ public class HearController : MonoBehaviour
         }
         if(collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            healSfx.PlayOneShot(heal);
+            StartCoroutine(Healing());
         }
+    }
+
+    private IEnumerator Healing()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
     }
 }
