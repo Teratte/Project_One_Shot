@@ -14,7 +14,7 @@ public class TitleScreenManager : MonoBehaviour
     {
         titleButton1.SetActive(false);
         titleButton2.SetActive(false);
-        titleButton2.SetActive(false);
+        controlButton.SetActive(false);
         controlText.SetActive(true);
         backButton.SetActive(true);
     }
@@ -24,6 +24,6 @@ public class TitleScreenManager : MonoBehaviour
         backButton.SetActive(false);
         titleButton1.SetActive(true);
         titleButton2.SetActive(true);
-        titleButton2.SetActive(true);
+        controlButton.SetActive(true);
     }
 }
