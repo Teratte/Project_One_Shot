@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class SweetPotatoController : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip deadSfx;
+
+    private AudioSource deadSource;
     // HP
     public int hp = 1;
     // 이동 속도
@@ -25,6 +29,7 @@ public class SweetPotatoController : MonoBehaviour
     {
         // Rigidbody2D 가져오기
         rbody = GetComponent<Rigidbody2D>();
+        deadSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -95,8 +100,9 @@ public class SweetPotatoController : MonoBehaviour
                 GetComponent<CircleCollider2D>().enabled = false;
                 // 이동 정지
                 rbody.velocity = new Vector2(0, 0);
-                // 바로 제거
-                Destroy(gameObject);
+
+                deadSource.PlayOneShot(deadSfx);
+                StartCoroutine(Dead());
             }
         }
 
@@ -104,5 +110,11 @@ public class SweetPotatoController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator Dead()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Destroy(gameObject);
     }
 }
