@@ -1,0 +1,8 @@
+Game Over: 게임 오버 대 재생
+Parry: 패링 때 재생
+Heal: 하트를 먹을 때 재생
+Egg crack: 계란 오브젝트 1타 맞출 때 재생
+Gun: 총 발사할 때 재생
+Dead: 적+하트 제거될 때 재생
+Button click: UI 버튼 클릭할 때 재생
+Open Can: ESC누를 때 재생 (일시정지 때)
