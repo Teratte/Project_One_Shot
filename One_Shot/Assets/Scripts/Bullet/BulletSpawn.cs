@@ -8,7 +8,7 @@ public class BulletSpawn : MonoBehaviour
     public float BulletSpeed = 0.0f;
 
     public GameObject BulletPrefabs; // Bullet »ý¼º
-    const float FireDelay = 0.5f;
+    const float FireDelay = 0.2f;
     private float FireTimer = 0.0f;
     bool fire = true;
 

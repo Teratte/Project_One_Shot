@@ -102,5 +102,5 @@ MonoBehaviour:
   - {fileID: 6676839467862183866, guid: 0acd993799f5d6546b0c50495fe7e17b, type: 3}
   - {fileID: 6677272024248959382, guid: 2ce75c7b2f6b797479cacf0b92aa831b, type: 3}
   - {fileID: 8127753180230868321, guid: ef66e0ce1f713eb41835bc3c0796919c, type: 3}
-  spawnRateMin: 2.5
-  spawnRateMax: 7
+  spawnRateMin: 4
+  spawnRateMax: 8
