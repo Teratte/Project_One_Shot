@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
+
+    [SerializeField]
+    private AudioClip deadSfx;
+
+    private AudioSource deadSource;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        deadSource = GetComponent<AudioSource>();
     }
     // 게임 오브젝트에 접촉
     private void OnCollisionEnter2D(Collision2D collision)
@@ -30,11 +36,19 @@ public class BulletController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Destroy(gameObject);
+            deadSource.PlayOneShot(deadSfx);
+            StartCoroutine(Dead());
         }
         else if (collision.gameObject.tag == "Heart")
         {
-            Destroy(gameObject);
+            deadSource.PlayOneShot(deadSfx);
+            StartCoroutine(Dead());
         }
+    }
+
+    IEnumerator Dead()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
     }
 }

@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class ChickenController : MonoBehaviour
 {
-    [SerializeField]
-    private AudioClip deadSfx;
-
-    private AudioSource deadSource;
     // HP
     public int hp = 1;
     // 이동 속도
@@ -29,7 +25,6 @@ public class ChickenController : MonoBehaviour
     {
         // Rigidbody2D 가져오기
         rbody = GetComponent<Rigidbody2D>();
-        deadSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -100,8 +95,7 @@ public class ChickenController : MonoBehaviour
                 GetComponent<CircleCollider2D>().enabled = false;
                 // 이동 정지
                 rbody.velocity = new Vector2(0, 0);
-                deadSource.PlayOneShot(deadSfx);
-                StartCoroutine(Dead());
+                Destroy(gameObject);
                 
             }
         }
@@ -111,9 +105,4 @@ public class ChickenController : MonoBehaviour
         }
     }
 
-    IEnumerator Dead()
-    {
-        yield return new WaitForSeconds(0.2f);
-        Destroy(gameObject);
-    }
 }
