@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class EggController : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip dead;
+    [SerializeField]
+    private AudioClip eggCrash;
+
+    private AudioSource monsterSfx;
     // HP
     public int hp = 2;
     // 이동 속도
@@ -26,6 +32,7 @@ public class EggController : MonoBehaviour
     {
         // Rigidbody2D 가져오기
         rbody = GetComponent<Rigidbody2D>();
+        monsterSfx = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -96,11 +103,12 @@ public class EggController : MonoBehaviour
                 GetComponent<CircleCollider2D>().enabled = false;
                 // 이동 정지
                 rbody.velocity = new Vector2(0, 0);
-                // 바로 제거
-                Destroy(gameObject);
+                monsterSfx.PlayOneShot(dead);
+                StartCoroutine(Crash());
             }
             else if(hp > 0)
             {
+                monsterSfx.PlayOneShot(eggCrash);
                 // 애니메이션 변경
                 Animator animator = GetComponent<Animator>();
                 animator.Play(DamageAnime);
@@ -110,5 +118,11 @@ public class EggController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private IEnumerator Crash()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Destroy(gameObject);
     }
 }

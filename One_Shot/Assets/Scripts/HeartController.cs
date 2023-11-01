@@ -6,8 +6,10 @@ public class HearController : MonoBehaviour
 {
     [SerializeField]
     private AudioClip heal;
+    [SerializeField]
+    private AudioClip dead;
 
-    private AudioSource healSfx;
+    private AudioSource heartSfx;
     // HP
     public int hp = 1;
     // 이동 속도
@@ -29,7 +31,7 @@ public class HearController : MonoBehaviour
     {
         // Rigidbody2D 가져오기
         rbody = GetComponent<Rigidbody2D>();
-        healSfx = GetComponent<AudioSource>();
+        heartSfx = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -100,20 +102,21 @@ public class HearController : MonoBehaviour
                 GetComponent<CircleCollider2D>().enabled = false;
                 // 이동 정지
                 rbody.velocity = new Vector2(0, 0);
-                // 바로 제거
-                Destroy(gameObject);
+                heartSfx.PlayOneShot(dead);
+                StartCoroutine(Crash());
             }
         }
         if(collision.gameObject.tag == "Player")
         {
-            healSfx.PlayOneShot(heal);
-            StartCoroutine(Healing());
+            heartSfx.PlayOneShot(heal);
+            StartCoroutine(Crash());
         }
     }
 
-    private IEnumerator Healing()
+    private IEnumerator Crash()
     {
         yield return new WaitForSeconds(0.1f);
         Destroy(gameObject);
     }
+
 }
