@@ -6,6 +6,10 @@ public class BulletSpawn : MonoBehaviour
 {
     [SerializeField]
     public float BulletSpeed = 0.0f;
+    [SerializeField]
+    private AudioClip fireSound;
+
+    private AudioSource FireSfx;
 
     public GameObject BulletPrefabs; // Bullet »ý¼º
     const float FireDelay = 0.2f;
@@ -15,6 +19,7 @@ public class BulletSpawn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FireSfx = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,6 +34,7 @@ public class BulletSpawn : MonoBehaviour
         {
             if (FireTimer > FireDelay && Input.GetMouseButtonDown(0))
             {
+                FireSfx.PlayOneShot(fireSound);
                 GameObject bullet = Instantiate(BulletPrefabs, transform.position, transform.rotation);
                 Rigidbody2D rbody = bullet.GetComponent<Rigidbody2D>();
                 rbody.AddForce(transform.up * BulletSpeed, ForceMode2D.Impulse);
@@ -36,6 +42,7 @@ public class BulletSpawn : MonoBehaviour
             }
             else if (FireTimer > FireDelay && Input.GetMouseButton(0))
             {
+                FireSfx.PlayOneShot(fireSound);
                 GameObject bullet = Instantiate(BulletPrefabs, transform.position, transform.rotation);
                 Rigidbody2D rbody = bullet.GetComponent<Rigidbody2D>();
                 rbody.AddForce(transform.up * BulletSpeed, ForceMode2D.Impulse);
@@ -44,4 +51,5 @@ public class BulletSpawn : MonoBehaviour
             FireTimer += Time.deltaTime;
         }
     }
+
 }
