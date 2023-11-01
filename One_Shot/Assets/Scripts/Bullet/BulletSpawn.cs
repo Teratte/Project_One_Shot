@@ -34,7 +34,7 @@ public class BulletSpawn : MonoBehaviour
         {
             if (FireTimer > FireDelay && Input.GetMouseButtonDown(0))
             {
-                FireSfx.PlayOneShot(fireSound);
+                FireSfx.PlayOneShot(fireSound,0.2f);
                 GameObject bullet = Instantiate(BulletPrefabs, transform.position, transform.rotation);
                 Rigidbody2D rbody = bullet.GetComponent<Rigidbody2D>();
                 rbody.AddForce(transform.up * BulletSpeed, ForceMode2D.Impulse);
@@ -42,7 +42,7 @@ public class BulletSpawn : MonoBehaviour
             }
             else if (FireTimer > FireDelay && Input.GetMouseButton(0))
             {
-                FireSfx.PlayOneShot(fireSound);
+                FireSfx.PlayOneShot(fireSound,0.2f);
                 GameObject bullet = Instantiate(BulletPrefabs, transform.position, transform.rotation);
                 Rigidbody2D rbody = bullet.GetComponent<Rigidbody2D>();
                 rbody.AddForce(transform.up * BulletSpeed, ForceMode2D.Impulse);
