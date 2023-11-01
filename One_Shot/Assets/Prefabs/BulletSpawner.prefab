@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6008850041860805286}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.44247782, y: 15.929201, z: 0}
   m_LocalScale: {x: 3.877921, y: 3.877921, z: 3.877921}
   m_ConstrainProportionsScale: 0
@@ -98,4 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletSpeed: 10
+  fireSound: {fileID: 8300000, guid: 31c2a89727950f44eba906bc91697945, type: 3}
   BulletPrefabs: {fileID: 6698826513641574963, guid: 0026d65da31836248b3cf5ff50268d91, type: 3}
