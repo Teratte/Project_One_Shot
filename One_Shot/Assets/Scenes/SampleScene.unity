@@ -1936,7 +1936,7 @@ PrefabInstance:
     - target: {fileID: 532511264574145425, guid: 755f57d17594e344d88dc173a1b6e939, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0c63f39aa87b4a84eac260c2d726a2a8, type: 3}
+      objectReference: {fileID: 21300000, guid: a11559ea4ed323d4aa72cb7d75da673d, type: 3}
     - target: {fileID: 824922352507278453, guid: 755f57d17594e344d88dc173a1b6e939, type: 3}
       propertyPath: m_Name
       value: ResumeButton
@@ -2168,7 +2168,7 @@ PrefabInstance:
     - target: {fileID: 8885447678296260365, guid: 755f57d17594e344d88dc173a1b6e939, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0c63f39aa87b4a84eac260c2d726a2a8, type: 3}
+      objectReference: {fileID: 21300000, guid: cb9836efa128e9d40b6bfb660d53b953, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5833922402771537408, guid: 755f57d17594e344d88dc173a1b6e939, type: 3}
